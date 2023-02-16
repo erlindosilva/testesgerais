@@ -1,0 +1,26 @@
+<html>
+	<title>Teste Dê</title>
+	<head>
+		<script>
+			function irProSiteEscolhido(valorDeValue)
+			{
+				document.getElementById("searchForm").action = valorDeValue;
+				alert("O form.action vai pra " + document.getElementById("searchForm").action);
+			}
+		</script>
+	</head>
+	<body>
+		<span>Escolha uma opção de site:</span>
+		<form name="searchForm" id="searchForm" action="#">
+			<select id="cars" onchange="irProSiteEscolhido(this.value)">
+			  <option value="#" selected>--Nenhum--</option>
+			  <option value="http://www.r7.com">R7</option>
+			  <option value="http://www.cnn.com">CNN</option>
+			  <option value="http://www.warner.com">Waner</option>
+			  <option value="http://www.disney.com">Disney</option>
+			</select>
+			<br><br>
+			<input type="submit"/>
+		</form>
+	</body>
+</html>
