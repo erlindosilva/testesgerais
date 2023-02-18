@@ -1,26 +1,16 @@
 <html>
 	<title>Teste Dê</title>
 	<head>
-		<script>
-			function irProSiteEscolhido(valorDeValue)
-			{
-				document.getElementById("searchForm").action = valorDeValue;
-				alert("O form.action vai pra " + document.getElementById("searchForm").action);
-			}
-		</script>
 	</head>
 	<body>
 		<span>Escolha uma opção de site:</span>
-		<form name="searchForm" id="searchForm" action="#">
-			<select id="cars" onchange="irProSiteEscolhido(this.value)">
-			  <option value="#" selected>--Nenhum--</option>
-			  <option value="http://www.r7.com">R7</option>
-			  <option value="http://www.cnn.com">CNN</option>
-			  <option value="http://www.warner.com">Waner</option>
-			  <option value="http://www.disney.com">Disney</option>
-			</select>
-			<br><br>
-			<input type="submit"/>
-		</form>
+		<form id="searchForm" class="searchForm navbar-form navbar-left flip" method="get" action="https://buscaintegrada.pucsp.br/vufind/Search/Results" name="searchForm" autocomplete="off">
+            <input id="searchForm_lookfor" class="searchForm_lookfor form-control search-query autocomplete searcher:Solr ac-auto-submit" type="text" name="lookfor" value="" aria-label="Termos&#x20;de&#x20;pesquisa" />
+          <select id="searchForm_type" class="searchForm_type form-control" name="type" data-native-menu="false" aria-label="Search&#x20;type" onchange="document.getElementById('searchForm_lookfor').action = this.value; alert('O form.action vai pra ' + document.getElementById('searchForm_lookfor').action);">
+                                    <option value="https://buscaintegrada.pucsp.br/vufind/Search/Results">Todos os campos</option>
+                            <option value="https://buscaintegrada.pucsp.br/vufind/Search/Results2">so Bibliotecas PUC-SP</option>
+                      </select>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Buscar</button>
+          <input type="hidden" name="limit" value="20" />  
 	</body>
 </html>
